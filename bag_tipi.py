@@ -1,16 +1,27 @@
 from lib.libs import *
+from lib.globals import * 
 
+#SADECE WIFI MODÜLDE GEÇERLİ OLABİLİR
 def bag_tipi():
     while True:
         print("Bağlantı ngrok tanımı sağlanıyor?")
-        global yayinci
-        yayinci = str(input("y/n"))
-        if yayinci == 'y' or yayinci == 'Y':
-            global ngrok_adres
-            print("NGROK'un 'x.tcp.ngrok.io' alanındaki x  kısmını yaz: ")
-            ngrok_no = int(input(""))
-            print("NGROK un 'x.tcp.ngrok.io:' \n kısmından sonra gelen port numarasını yaz: ")
-            ngrok_port = int(input(""))
-            ngrok_adres = "{0}.tcp.ngrok.io:{1}",ngrok_no,ngrok_port
-        elif yayinci !='y' or yayinci !='Y':
-            break
+        print("PORT:4000 kontrol ediliyor")
+        soket = sok.socket(sok.AF_INET, sok.SOCK_STREAM)
+        kontrol = soket.connect_ex((cid,4000))
+        if kontrol == True:
+            print("Ngrok arka planda çalıştığı tespit edildi")
+            print("bağlantınızı NGROK üzerinden yürütmek istiyormusunuz")
+            global yayinci
+            yayinci = str(input("y/n"))
+            if yayinci == 'y' or yayinci == 'Y':
+                os.system("cls")
+                print("Lütfen gerekli bilgileri giriniz")
+                global ngrok_adres
+                print("NGROK'un '#.tcp.ngrok.io' alanındaki #  kısmı: ")
+                global ngrok_no
+                ngrok_no = int(input(""))
+                print("NGROK un 'x.tcp.ngrok.io:#####' \n kısmından sonra gelen port:(#####) numarasını: ")
+                global ngrok_port
+                ngrok_port = int(input(""))
+            elif yayinci !='y' or yayinci !='Y':
+                break
