@@ -6,35 +6,39 @@ def bakport(p):
     kontrol.close()
     return kontrol == 0
 
+def PCTani():
+    global p_ad,p_ip
+    p_ad = sok.gethostname()
+    p_ip = sok.gethostbyname(sok.gethostname())
+    
+
 def CihazTani():
     os.system("clear")
     yorum = "Cihazı bütün bağlantı işlemlerinden önce \n tanıma işlemleri başlatılıyor... \n"
     print(yorum)
-    print("Hedef cihazın 'Termux' adı alınıyor ")
-    global c_ad 
-    c_ad = sok.gethostname()
-    
+    global c_ad
+    c_ad = str(input("Hedef cihazın 'Termux' adı: "))
+    #YARIN DEVAM UYKUM VAR
     if c_ad != "": 
         os.system("clear")
         print(yorum)
         print("Hedef cihazın 'Termux' adı: {0}".format(c_ad))
         global c_id
-        c_id = sok.gethostbyname(sok.gethostname())
+        c_id = str(input("Hedef cihazın IPv4: "))
         print("Hedef cihazın 'IPv4' ip: {0}".format(c_id))
         if c_id != "":
             os.system("clear")
             print(yorum)
             print("Hedef cihazın 'Termux' adı: {0}".format(c_ad))
             print("Hedef cihazın 'IPv4' id: {0}".format(c_id))
-            #PORT İNCELEME DÖNGÜSÜ EKLENECEK
-            
+            #PORT İNCELEME DÖNGÜSÜ EKLENECEK            
             global c_prt
-            c_prt = int(input(""))
+            c_prt = int(input("Hedef cihazın bağlantı portu: "))
         elif c_id == "":
-            print("Cihaz IPv4 alınamıyor")
+            print("Cihaz IPv4 verilmedi")
             print("Vaz geçiliyor...")
     elif c_ad == "":
-        print("Cihaz adı alınamıyor")
+        print("Cihaz adı verilmedi")
         print("Vaz geçiliyor...")
 
 
