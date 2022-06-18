@@ -18,7 +18,6 @@ def CihazTani():
     print(yorum)
     global c_ad
     c_ad = str(input("Hedef cihazın 'Termux' adı: "))
-    #YARIN DEVAM UYKUM VAR
     if c_ad != "": 
         os.system("clear")
         print(yorum)

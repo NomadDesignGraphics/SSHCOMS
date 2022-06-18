@@ -1,4 +1,4 @@
-from lib.libs import *
+
 
 # def ipkontrol(c_id):
 #     try:
@@ -8,9 +8,7 @@ from lib.libs import *
 #         print("Girdiğiniz ip adresi geçerli değildir")
         
 # ipkontrol("192.168.1.1")
-port=5900
-yap_csv = [["ports"],]
-for i in range(1000):
-    port+i.append(yap_csv)
-
-print(yap_csv)
+paylasilan_port = int(input("Lütfen 59XX portundaki XX yerine geçecek sayıyı giriniz"))
+global iport
+iport = 5900 + paylasilan_port
+print(iport)
