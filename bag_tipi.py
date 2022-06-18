@@ -1,13 +1,14 @@
-from lib.libs import *
-from lib.globals import * 
+import lib.libs 
+from lib.libs import os,incele 
 
 #SADECE WIFI MODÜLDE GEÇERLİ OLABİLİR
 def bag_tipi():
     while True:
         print("Bağlantı ngrok tanımı sağlanıyor?")
         print("PORT:4000 kontrol ediliyor")
-        soket = sok.socket(sok.AF_INET, sok.SOCK_STREAM)
-        kontrol = soket.connect_ex((cid,4000))
+        # soket = sok.socket(sok.AF_INET, sok.SOCK_STREAM)
+        # kontrol = soket.connect_ex((cid,4000))
+        kontrol = incele(4000)
         if kontrol == True:
             print("Ngrok arka planda çalıştığı tespit edildi")
             print("bağlantınızı NGROK üzerinden yürütmek istiyormusunuz")

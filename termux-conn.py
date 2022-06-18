@@ -1,6 +1,5 @@
-from glob import glob
-from lib.libs import *
-from lib.globals import *
+from lib.libs import os
+from lib.globals import yayin,cad,cid,cort,nogrok,pogrok
 
 #Transfer Port To Windows for TCP connection
 def tptw():

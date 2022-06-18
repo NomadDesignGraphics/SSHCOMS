@@ -1,16 +1,27 @@
-from lib.libs import *
+from lib.libs import sok,os
 
 def bakport(p):
     soket = sok.socket(sok.AF_INET, sok.SOCK_STREAM)
-    kontrol = kontrol.connect_ex((c_id, p))
-    kontrol.close()
-    return kontrol == 0
+    bakiliyor = bakiliyor.connect_ex((c_id, p))
+    bakiliyor.close()
+    return bakiliyor == 0
 
 def PCTani():
     global p_ad,p_ip
     p_ad = sok.gethostname()
     p_ip = sok.gethostbyname(sok.gethostname())
     
+def kontrol_et(IPv4, Port):
+	# Create a TCP socket
+	s = sok.socket()
+	print ("Attempting to connect to {0} on port {1}".format(IPv4, Port))
+	try:
+		s.connect((IPv4, Port))
+		print ("Connected to {0} on port {1}".format(IPv4, Port))
+		return True
+	except sok.error: #unstable code here, better check it again later 
+		print ("Connection to {0} on port {1} failed: {2}".format(IPv4, Port,Exception))
+		return False
 
 def CihazTani():
     os.system("clear")

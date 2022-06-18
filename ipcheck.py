@@ -1,4 +1,4 @@
-from lib.libs import *
+from lib.libs import ipadr
 def ipkontrol(c_id):
     try:
         ip = ipadr.ip_address(c_id)
