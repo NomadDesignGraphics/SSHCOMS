@@ -2,7 +2,7 @@ import lib.libs
 from lib.libs import os,incele 
 
 #SADECE WIFI MODÜLDE GEÇERLİ OLABİLİR
-def bag_tipi():
+def Bag_tipi():
     while True:
         print("Bağlantı ngrok tanımı sağlanıyor?")
         print("PORT:4000 kontrol ediliyor")
